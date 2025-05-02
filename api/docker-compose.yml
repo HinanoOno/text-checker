@@ -1,9 +1,0 @@
-version: '3'
-services:
-  text-checker:
-    build: .
-    volumes:
-      - .dockervenv:/src/.venv
-      - .:/src
-    ports:
-      - 8000:8000
