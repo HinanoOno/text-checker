@@ -24,14 +24,14 @@ function App() {
     if (!text.trim()) return;
     setIsLoading(true);
     try {
-      const res = await fetch("/check", {
+      const res = await fetch("http://localhost:8000/check", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text }),
       });
       const data = await res.json();
       console.log("校正結果:", data);
-      setCorrectedText(data.corrected);
+      setCorrectedText(data.checked);
     } catch (err) {
       console.error("校正中にエラー:", err);
     } finally {
